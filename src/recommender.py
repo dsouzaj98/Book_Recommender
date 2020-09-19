@@ -74,14 +74,4 @@ def get_final_reco(list1):
         else:
             sim_books.append(sim_book)
     return sim_books
-    # i=0
-    # n=0
-    # while n<9:
-    #     similar_books_to_read= test[i][0]
-    #     i += 1
-    #     if similar_books_to_read in list_of_books:
-    #         continue
-    #     else:
-
-    #         print(similar_books_to_read)
-    #         n += 1
+    
