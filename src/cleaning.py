@@ -1,9 +1,9 @@
 import pandas as pd 
 
 #goodbooks data
-books_data=pd.read_csv("data/goodbooks-10k-data/books.csv")
+books=pd.read_csv("data/goodbooks-10k-data/books.csv")
 tags_data=pd.read_csv('data/goodbooks-10k-data/book_tags.csv')
-ratings_data=pd.read_csv('data/goodbooks-10k-data/ratings.csv')
+ratings=pd.read_csv('data/goodbooks-10k-data/ratings.csv')
 book_tags=pd.read_csv('data/goodbooks-10k-data/tags.csv')
 
 #book crossing data
