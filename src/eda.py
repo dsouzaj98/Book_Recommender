@@ -33,8 +33,8 @@ merge_data=merge_data.sort_values('isbn', ascending=True)
 
 
 stop_words=set(STOPWORDS)
-author_string = " ".join(books_data['authors'])
-title_string = " ".join(books_data['original_title'])
+author_string = " ".join(books['authors'])
+title_string = " ".join(books['original_title'])
 cross_author_string = " ".join(merge_data['book_author'].astype(str))
 cross_title_string = " ".join(merge_data['book_title'].astype(str))
 cross_publisher_string = " ".join(merge_data['publisher'].astype(str))

@@ -29,7 +29,6 @@ book_ratings_training, book_ratings_testing = train_test_split(book_ratings_for_
 #find the per-book ratings of test set
 indices = book_ratings_testing.index
 test_set_ratings = user_book_ratings.loc[indices]
-
 mean_ratings_for_random_10 = []
 
 # for each user, pick 10 books at random that the reader has rated and get the reader's average score for those books
@@ -109,15 +108,14 @@ cluster5_mean = get_cluster_mean(5)
 cluster6_books_storted = get_cluster_favorites(6)
 cluster6_mean = get_cluster_mean(6)
 
-
-
 #associate test user with cluster
 test_set_preds = clusterer_KMeans.predict(book_ratings_testing)
 test_set_indices = book_ratings_testing.index
 test_set_clusters = pd.DataFrame(data=test_set_preds, columns=['cluster']).set_index(test_set_indices)
 
-
+#create empty list
 mean_ratings_for_cluster_favorites = []
+
 # put each cluster's sorted book list in an array to reference
 cluster_favorites = [cluster0_books_storted, cluster1_books_storted, cluster2_books_storted, cluster3_books_storted, cluster4_books_storted, cluster5_books_storted, cluster6_books_storted]
 
@@ -140,7 +138,6 @@ for index, row in test_set_ratings.iterrows():
     mean_ratings_for_cluster_favorites.append(mean_rating_for_favorites)
     
 mean_favorites_rating = sum(mean_ratings_for_cluster_favorites) / len(mean_ratings_for_cluster_favorites)
-
 
 #recommender function
 def recommend(cluster_assignments=test_set_clusters, ratings_matrix=user_book_ratings, user_id):

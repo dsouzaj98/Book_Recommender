@@ -1,7 +1,7 @@
 from eda import *
 import numpy as np
 
-content_data = books_data[['original_title','authors','average_rating']]
+content_data = books[['original_title','authors','average_rating']]
 content_data = content_data.astype(str)
 
 content_data['content'] = content_data['original_title'] + ' ' + content_data['authors'] + ' ' + content_data['average_rating']
