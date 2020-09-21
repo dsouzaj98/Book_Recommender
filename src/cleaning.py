@@ -8,13 +8,13 @@ book_tags=pd.read_csv('data/goodbooks-10k-data/tags.csv')
 
 #book crossing data
 u_cols=['user_id','location','age']
-cross_users_data=pd.read_csv('data/Book_reviews/BX-Users.csv', sep=';', names=u_cols, encoding='latin-1', low_memory=False, skiprows=1)
+cross_users_data=pd.read_csv('data/Book_reviews/Book_reviews/BX-Users.csv', sep=';', names=u_cols, encoding='latin-1', low_memory=False, skiprows=1)
 
 b_cols=['isbn', 'book_title', 'book_author','year_of_publication','publisher','img_s','img_m','img_1']
-cross_books_data=pd.read_csv('data/Book_reviews/BX-Books.csv', sep=';', names=b_cols, encoding='latin-1', low_memory=False, skiprows=1)
+cross_books_data=pd.read_csv('data/Book_reviews/Book_reviews/BX-Books.csv', sep=';', names=b_cols, encoding='latin-1', low_memory=False, skiprows=1)
 
 r_cols=['user_id', 'isbn', 'rating']
-cross_ratings_data=pd.read_csv('data/Book_reviews/BX-Book-Ratings.csv', sep=';', names=r_cols, encoding='latin-1', low_memory=False, skiprows=1)
+cross_ratings_data=pd.read_csv('data/Book_reviews/Book_reviews/BX-Book-Ratings.csv', sep=';', names=r_cols, encoding='latin-1', low_memory=False, skiprows=1)
 
 #drop unnecessary columns
 # books_data = books_data.drop(columns=['id', 'best_book_id', 'work_id', 'isbn', 'isbn13', 'title','work_ratings_count',
