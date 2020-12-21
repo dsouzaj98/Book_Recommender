@@ -13,12 +13,15 @@ from flask import render_template
 import pickle
 import pandas as pd
 from io import BytesIO
+from recommender import *
 
 app=Flask(__name__)
 
+with open('pickle/tfvectorizer.pkl', 'rb') as f:
+    tfvec=pickle.load(f)
+
 #home page
 @app.route('/')
-
 def get_new_data():
     return '''
     <body>  
@@ -52,6 +55,11 @@ def get_new_data():
         <'''
 @app.route('/predict-new', methods=['GET','POST' ])
 def predict():
-    
+    searchterm=request.form['searchterm']
+    recomms=get_recommendations_books(str(searchterm))
+    breakpoint
+    pass
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)

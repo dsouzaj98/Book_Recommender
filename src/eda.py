@@ -1,12 +1,8 @@
-import plotly.graph_objs as go
-from plotly.offline import  init_notebook_mode, iplot
-init_notebook_mode(connected=True)
 import cufflinks as cf
 cf.go_offline()
 cf.set_config_file(offline=False, world_readable=True)
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud,STOPWORDS
-import plotly_express as px
 import re
 import string
 from sklearn.metrics.pairwise import cosine_similarity

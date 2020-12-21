@@ -1,5 +1,6 @@
 from eda import *
 import numpy as np
+import pickle
 
 content_data = books[['original_title','authors','average_rating']]
 content_data = content_data.astype(str)
@@ -13,6 +14,9 @@ tfidf=TfidfVectorizer(stop_words='english')
 
 tfidf_matrix=tfidf.fit_transform(content_data['authors'])
 cosine_sim_author=linear_kernel(tfidf_matrix,tfidf_matrix)
+
+with open('pickle/tfvectorizer.pkl', 'wb') as f:
+    pickle.dump(tfidf_matrix, f)
 
 def get_recommendations_books(title, cosine_sim=cosine_sim_author):
     idx = indices[title]
