@@ -17,9 +17,6 @@ from recommender import *
 
 app=Flask(__name__)
 
-with open('pickle/tfvectorizer.pkl', 'rb') as f:
-    tfvec=pickle.load(f)
-
 #home page
 @app.route('/')
 def get_new_data():
@@ -56,9 +53,14 @@ def get_new_data():
 @app.route('/predict-new', methods=['GET','POST' ])
 def predict():
     searchterm=request.form['searchterm']
-    recomms=get_recommendations_books(str(searchterm))
-    breakpoint
-    pass
+    # page=""
+    # for book in get_recommendations_books(f"{searchterm}"):
+    #     page+=f'\n Title: {book}'
+    # return page
+
+
+    return ",".join(get_recommendations_books(f"{searchterm}"))
+    
 
 
 if __name__ == '__main__':

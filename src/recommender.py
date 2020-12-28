@@ -16,7 +16,9 @@ tfidf_matrix=tfidf.fit_transform(content_data['authors'])
 cosine_sim_author=linear_kernel(tfidf_matrix,tfidf_matrix)
 
 with open('pickle/tfvectorizer.pkl', 'wb') as f:
-    pickle.dump(tfidf_matrix, f)
+    pickle.dump(tfidf, f)
+
+
 
 def get_recommendations_books(title, cosine_sim=cosine_sim_author):
     idx = indices[title]
