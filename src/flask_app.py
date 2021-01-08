@@ -53,13 +53,12 @@ def get_new_data():
 @app.route('/predict-new', methods=['GET','POST' ])
 def predict():
     searchterm=request.form['searchterm']
-    # page=""
-    # for book in get_recommendations_books(f"{searchterm}"):
-    #     page+=f'\n Title: {book}'
-    # return page
-
-
     return ",".join(get_recommendations_books(f"{searchterm}"))
+
+# @app.route('/predict-set', methods=['GET','POST'])
+# def predict2():
+#     searchterm2=request.form['searchterm2']
+#     return ','.join(get_reco_collab(f"{searchterm2}"))
     
 
 
